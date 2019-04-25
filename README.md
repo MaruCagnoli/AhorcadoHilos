@@ -17,6 +17,7 @@ public static void main() {
     r1.run();
     r2.run();
 }
+Acá no tenemos múltiples hilos, acá ejecutan el único existente.
 public static void main() {
     R1 r1 = new R1();
     R2 r2 = new R2();
@@ -26,6 +27,25 @@ public static void main() {
     t1.start();
     t2.start();
 }
-Nótese que para poder hacer start, es importante crear los hilos y mandarle nuestros runnables.
+Nótese que para poder hacer start, es importante crear los hilos y mandarle nuestros runnables. Y si hacemos start, estamos utilizando la multiplicidad de hilos!
+
+2 - Ciclo de vida de un Thread:
+El ciclo de vida de un Thread representa los estados por los cuales puede pasar un Thread desde que nace hasta que muere. Un Thread puede contener diferentes estados.
+El ciclo del Thread: 
+    - new Thread() --------Nuevo Thread.(Nace el hilo, se crea. Permanece vacío o nulo)
+    - start() -------------Comienza.(Pasa a un estado de Listo!)
+    - Ejecutable-----------Llama al método run() que se ejecuta de forma secuencial.
+                           Aun no ha empezado a ejecutarse.
+    - En ejecución---------Pasa a este estado cuando se le asignan los recursos del 
+                           procesador. Cada hilo tendrá su prooridad.
+    - parado---------------Puede estar en wait(), sleep(), suspend(), puede estar
+                           bloqueado durante una solicitud de entrada salida.
+    - stop()---------------Muerto. :( Aquí termina el método run(). Puede morir por
+    muerte natural: cuando sale normalmente de su método run() o por muerte provocada:
+    con un stop() por ejemplo.
+
+
+
+
 
 
