@@ -43,6 +43,14 @@ El ciclo del Thread:
     - stop()---------------Muerto. :( Aquí termina el método run(). Puede morir por
     muerte natural: cuando sale normalmente de su método run() o por muerte provocada:
     con un stop() por ejemplo.
+    
+    
+    3- Explicar métodos start(), sleep(), yield() y join():
+    
+    Método start(): Hereda de la super clase Thread e enicia al hilo y llama al método run().
+    Método sleep(): Provoca que el intérprete ponga al hilo en curso a dormir durante el número de milisegundos que se indiquen en el parámetro de invocación. Una vez transcurridos esos milisegundos el hilo volverá a estar disponible para su ejecución.
+    Método yield(): Hace que el intérprete cambie de contexto entre el hilo actualy el siguiente hilo ejecutable disponible. Es una manera de asegurar que los hilos de menor prioridad no sufran inanición.
+    Método join(): Si un Thread necesita esperar a que otro termine, por ejemplo el thread padre, puede usar este método. 
 
 
 
